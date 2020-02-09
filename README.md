@@ -8,10 +8,10 @@ mandb: Mandb
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.mandb](https://galaxy.ansible.com/devops-toolbox.mandb)
+[https://galaxy.ansible.com/devopstoolbox.mandb](https://galaxy.ansible.com/devopstoolbox.mandb)
 
 ```bash
-ansible-galaxy install devops-toolbox.mandb
+ansible-galaxy install devopstoolbox.mandb
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: mandb is configured
       import_role:
-        name: devops-toolbox.mandb
+        name: devopstoolbox.mandb
       vars:
         mandb_packages_state: present
         mandb_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
