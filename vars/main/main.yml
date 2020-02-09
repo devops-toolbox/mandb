@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+mandb_repos_create: "{{ _mandb_repos_create['all']
+  | union ( _mandb_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+mandb_repos_download: "{{ _mandb_repos_download['all']
+  | union ( _mandb_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+mandb_templates_copy: "{{ _mandb_templates_copy['all']
+  | union ( _mandb_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+mandb_services_enable: "{{ _mandb_services_enable['all']
+  | union ( _mandb_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+mandb_selinux_enable: "{{ _mandb_selinux_enable['all']
+  | union ( _mandb_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+mandb_packages_remove: "{{ _mandb_packages_remove['all']
+  | union ( _mandb_packages_remove[my_os]
+  | default([]) ) }}"
+mandb_packages_repos: "{{ _mandb_packages_repos['all']
+  | union ( _mandb_packages_repos[my_os]
+  | default([]) ) }}"
+mandb_packages_prereq: "{{ _mandb_packages_prereq['all']
+  | union ( _mandb_packages_prereq[my_os]
+  | default([]) ) }}"
+mandb_packages_install: "{{ _mandb_packages_install['all']
+  | union ( _mandb_packages_install[my_os]
+  | default([]) ) }}"

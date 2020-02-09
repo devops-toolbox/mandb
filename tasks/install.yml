@@ -1,0 +1,27 @@
+---
+# Install mandb packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ mandb_packages_remove }}"
+    state: absent
+  become: true
+  when: mandb_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ mandb_packages_repos }}"
+    state: "{{ mandb_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ mandb_packages_prereq }}"
+    state: "{{ mandb_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ mandb_packages_install }}"
+    state: "{{ mandb_packages_state }}"
+  become: true
